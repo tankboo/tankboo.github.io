@@ -93,10 +93,12 @@
 <meta property="og:site_name" content="Tan Biao&#39;s Blog">
 <meta property="og:description" content="主题设置个人比较喜欢 NexT 主题，所以这篇文章主要讲next主题的设置 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 NexT 主题安装主题下载现将路">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-30T10:39:20.000Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/30/1600c9bab31fed86?w=778&h=326&f=png&s=27324">
+<meta property="og:updated_time" content="2017-11-30T11:14:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo＋ github快速搭建自己的博客网站(二)">
 <meta name="twitter:description" content="主题设置个人比较喜欢 NexT 主题，所以这篇文章主要讲next主题的设置 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 NexT 主题安装主题下载现将路">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/11/30/1600c9bab31fed86?w=778&h=326&f=png&s=27324">
 
 
 
@@ -153,7 +155,9 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
+    <div class="forkme">
+      <a target="_blank" href="https://github.com/tankboo"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+    </div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -330,7 +334,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,099
+                  1,502
                 </span>
               
 
@@ -346,7 +350,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -500,7 +504,27 @@ theme:
     min2read: true
     totalcount: false
     separated_meta: true
-</code></pre>
+</code></pre><h1 id="在博客中添加Fork-me-on-GitHub"><a href="#在博客中添加Fork-me-on-GitHub" class="headerlink" title="在博客中添加Fork me on GitHub"></a>在博客中添加Fork me on GitHub</h1><p>在添加之前可以去官网<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">官网</a>选择自己喜欢的样式</p>
+<p>在NexT主题中找到 <code>next\layout\_layout.swig</code>目录下的<code>_layout.swig</code> 的文件，然后找到如下代码块</p>
+<pre><code>&lt;div class=&quot;{{ container_class }} {% block page_class %}{% endblock %} &quot;&gt;
+&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;
+</code></pre><p>然后将选中的样式的代码放到<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的后面</p>
+<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/tankboo&quot;&gt;&lt;img style=&quot;position: absolute; top: 0; left: 0; border: 0;&quot; src=&quot;https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67&quot; alt=&quot;Fork me on GitHub&quot; data-canonical-src=&quot;https://user-gold-cdn.xitu.io/2017/11/30/1600c8fe7bc8587e?w=149&amp;h=149&amp;f=png&amp;s=6789&quot;&gt;&lt;/a&gt;
+</code></pre><p>然后在重新编译后就可以看到效果了</p>
+<h1 id="显示更多"><a href="#显示更多" class="headerlink" title="显示更多"></a>显示更多</h1><p>在浏览生成后的页面时，发现首页会把文章的全部内容列出来，如果文章内容太多，则这种方式是不友好的，我们需要把一部分信息隐藏起来，方法就是在文章中的适当位置加入如下代码</p>
+<pre><code>&lt;!--more--&gt;
+</code></pre><p>然后重新编译生成的首页中的文章中就会生成如下按钮</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/30/1600c9bab31fed86?w=778&amp;h=326&amp;f=png&amp;s=27324" alt=""></p>
+<h1 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h1><p>这个模版用的人太多，我们想要更个性化一点，则需要我们自己去修改主题中的一些样式，自己定义的样式主要放在<code>next\source\css\_variables\_custom.styi</code>中，比如我们想给首页的每个文章加上一个含有阴影的边框，并增加文章之间的上下间距，可以进行如下设置</p>
+<pre><code>.post {
+     margin-bottom: 100px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 14px #cacbcb;
+    -moz-box-shadow: 0 0 14px #cacbcc;
+     background: #fff;
+}
+</code></pre><p>然后就能看到上一图中的样式了</p>
+
       
     </div>
     
@@ -657,7 +681,7 @@ theme:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主题设置"><span class="nav-number">1.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT-主题安装"><span class="nav-number">1.1.</span> <span class="nav-text">NexT 主题安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题下载"><span class="nav-number">1.1.1.</span> <span class="nav-text">主题下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">1.1.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题验证"><span class="nav-number">1.1.3.</span> <span class="nav-text">主题验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语言设置"><span class="nav-number">1.1.4.</span> <span class="nav-text">语言设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">1.1.5.</span> <span class="nav-text">设置菜单</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用创建命令"><span class="nav-number">2.</span> <span class="nav-text">常用创建命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加「标签」页面"><span class="nav-number">2.1.</span> <span class="nav-text">添加「标签」页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面"><span class="nav-number">2.1.1.</span> <span class="nav-text">新建页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置页面类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加「分类」页面"><span class="nav-number">2.2.</span> <span class="nav-text">添加「分类」页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">新建页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面类型-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置页面类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">3.</span> <span class="nav-text">侧边栏社交链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">3.1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图标"><span class="nav-number">3.2.</span> <span class="nav-text">图标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友情链接"><span class="nav-number">4.</span> <span class="nav-text">友情链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#站点建立时间"><span class="nav-number">5.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">6.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置「背景动画」"><span class="nav-number">7.</span> <span class="nav-text">设置「背景动画」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置加载进度条样式"><span class="nav-number">8.</span> <span class="nav-text">设置加载进度条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#footer信息设置"><span class="nav-number">9.</span> <span class="nav-text">footer信息设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加字数统计功能"><span class="nav-number">10.</span> <span class="nav-text">添加字数统计功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主题设置"><span class="nav-number">1.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT-主题安装"><span class="nav-number">1.1.</span> <span class="nav-text">NexT 主题安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题下载"><span class="nav-number">1.1.1.</span> <span class="nav-text">主题下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">1.1.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题验证"><span class="nav-number">1.1.3.</span> <span class="nav-text">主题验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语言设置"><span class="nav-number">1.1.4.</span> <span class="nav-text">语言设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">1.1.5.</span> <span class="nav-text">设置菜单</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用创建命令"><span class="nav-number">2.</span> <span class="nav-text">常用创建命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加「标签」页面"><span class="nav-number">2.1.</span> <span class="nav-text">添加「标签」页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面"><span class="nav-number">2.1.1.</span> <span class="nav-text">新建页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置页面类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加「分类」页面"><span class="nav-number">2.2.</span> <span class="nav-text">添加「分类」页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">新建页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面类型-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置页面类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">3.</span> <span class="nav-text">侧边栏社交链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">3.1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图标"><span class="nav-number">3.2.</span> <span class="nav-text">图标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友情链接"><span class="nav-number">4.</span> <span class="nav-text">友情链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#站点建立时间"><span class="nav-number">5.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">6.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置「背景动画」"><span class="nav-number">7.</span> <span class="nav-text">设置「背景动画」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置加载进度条样式"><span class="nav-number">8.</span> <span class="nav-text">设置加载进度条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#footer信息设置"><span class="nav-number">9.</span> <span class="nav-text">footer信息设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加字数统计功能"><span class="nav-number">10.</span> <span class="nav-text">添加字数统计功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在博客中添加Fork-me-on-GitHub"><span class="nav-number">11.</span> <span class="nav-text">在博客中添加Fork me on GitHub</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示更多"><span class="nav-number">12.</span> <span class="nav-text">显示更多</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义样式"><span class="nav-number">13.</span> <span class="nav-text">自定义样式</span></a></li></ol></div>
             
 
           </div>

@@ -1,3 +1,18 @@
+.post {
+  margin-bottom: 100px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 14px #cacbcb;
+  -moz-box-shadow: 0 0 14px #cacbcc;
+  background: #fff;
+}
+.forkme {
+  display: none;
+}
+@media (min-width: 768px) {
+  .forkme {
+    display: inline;
+  }
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1822,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #659632;
+  background: #95c1ff;
 }
 .links-of-blogroll {
   font-size: 13px;
